@@ -17,16 +17,20 @@ public class Funcionario {
     @Column(nullable = false)
     private String email;
 
+    @Enumerated(EnumType.STRING)
+    private Setor setor;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
     public Funcionario() {
     }
 
-    public Funcionario(UUID id, String nome, String email, Endereco endereco) {
+    public Funcionario(UUID id, String nome, String email, Setor setor, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.email = email;
+        this.setor = setor;
         this.endereco = endereco;
     }
 
@@ -52,6 +56,14 @@ public class Funcionario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Setor getSetor() {
+        return setor;
+    }
+
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 
     public Endereco getEndereco() {
