@@ -29,7 +29,8 @@ public class UsuarioService {
         usuario.setEmail(usuarioRequestDTO.getEmail()); 
         usuario.setSenha(bCryptPasswordEncoder.encode(usuarioRequestDTO.getSenha()));
 
-        return usuarioRepository.save(usuario);
+        usuarioRepository.save(usuario);
+        return usuario;
     }
 
     //Listar todos os usuarios

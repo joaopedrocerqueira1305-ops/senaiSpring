@@ -37,10 +37,11 @@ public class UsuarioController {
     public ResponseEntity<Map<String, Object>> salvar(@Valid @RequestBody UsuarioRequestDTO dto){
         usuarioService.salvarUsuario(dto);
 
+        // Carregamento de dados do novo úsuario
         URI location = ServletUriComponentsBuilder
             .fromCurrentRequest()
             .path("/{id}")
-            .buildAndExpand()
+            .buildAndExpand(usuario.getId())
             .toUri();
 
         return ResponseEntity
