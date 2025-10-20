@@ -12,6 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.aula7.dto.UsuarioRequestDTO;
 import com.example.aula7.dto.UsuarioResponseDTO;
+import com.example.aula7.model.Usuario;
 import com.example.aula7.service.UsuarioService;
 
 import jakarta.validation.Valid;
@@ -35,7 +36,7 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<Map<String, Object>> salvar(@Valid @RequestBody UsuarioRequestDTO dto){
-        usuarioService.salvarUsuario(dto);
+        Usuario usuario = usuarioService.salvarUsuario(dto);
 
         // Carregamento de dados do novo úsuario
         URI location = ServletUriComponentsBuilder

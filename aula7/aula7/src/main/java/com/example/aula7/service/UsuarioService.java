@@ -21,8 +21,9 @@ public class UsuarioService {
 
     //Salvar novo usuario
     public Usuario salvarUsuario(UsuarioRequestDTO usuarioRequestDTO){
-        usuarioRepository.findByEmail(usuarioRequestDTO.getEmail())
-        .ifPresent(u -> {throw new IllegalArgumentException("E-mail já cadastrado.");} );
+        if (usuarioRepository.findByEmail(usuarioRequestDTO.getEmail()).isPresent()) {
+            throw new RuntimeException("Email ja cadastrado");
+        }
         
         Usuario usuario = new Usuario();
         usuario.setNome(usuarioRequestDTO.getNome());
