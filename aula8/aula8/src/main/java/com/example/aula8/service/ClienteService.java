@@ -3,17 +3,11 @@ package com.example.aula8.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.example.aula8.dto.ClienteRequestDTO;
 import com.example.aula8.dto.ClienteResponseDTO;
-import com.example.aula8.dto.FuncionarioRequestDTO;
-import com.example.aula8.dto.FuncionarioResponseDTO;
 import com.example.aula8.model.ClienteModel;
-import com.example.aula8.model.FuncionarioModel;
 import com.example.aula8.repository.ClienteRepository;
-import com.example.aula8.repository.FuncionarioRepository;
 
 @Service
 public class ClienteService {
@@ -31,42 +25,45 @@ public class ClienteService {
 
     //SALVAR UM FUNCIONARIO
     public ClienteModel salvarCliente(ClienteRequestDTO dto){
-        if (funcionarioRepository.findByEmail(dto.getEmail()).isPresent()) {
+        if (clienteRepository.findByEmail(dto.getEmail()).isPresent()) {
             throw new RuntimeException("Email ja cadastrado");
             
         }
-        FuncionarioModel novoFuncionario = new FuncionarioModel();
-        novoFuncionario.setNome(dto.getNome());
-        novoFuncionario.setEmail(dto.getEmail());
-        novoFuncionario.setSenha(passwordEncoder.encode(dto.getSenha()));
+        ClienteModel novoCliente = new ClienteModel();
+        novoCliente.setNome(dto.getNome());
+        novoCliente.setEmail(dto.getEmail());
+        novoCliente.setTelefone(dto.getTelefone());
+        novoCliente.setFormaPagamento(dto.getFormaPagamento());
+        novoCliente.setEndereco(dto.getEndereco());
 
-        funcionarioRepository.save(novoFuncionario);
-        return novoFuncionario;
+        clienteRepository.save(novoCliente);
+        return novoCliente;
     }
 
     //ATUALIZAR UM FUNCIONARIO
-    public FuncionarioModel atualizarFuncionario(Long id, FuncionarioRequestDTO dto){
-        if (!funcionarioRepository.existsById(id)) {
-            throw new RuntimeException("Funcionário não encontrado");
+    public ClienteModel atualizarCliente(Long id, ClienteRequestDTO dto){
+        if (!clienteRepository.existsById(id)) {
+            throw new RuntimeException("Cliente não encontrado");
             
         }
+        ClienteModel atualizarCliente = new ClienteModel();
+        atualizarCliente.setNome(dto.getNome());
+        atualizarCliente.setEmail(dto.getEmail());
+        atualizarCliente.setTelefone(dto.getTelefone());
+        atualizarCliente.setFormaPagamento(dto.getFormaPagamento());
+        atualizarCliente.setEndereco(dto.getEndereco());
 
-        FuncionarioModel atualizarFuncionario = new FuncionarioModel();
-        atualizarFuncionario.setId(id);
-        atualizarFuncionario.setNome(dto.getNome());
-        atualizarFuncionario.setEmail(dto.getEmail());
-        atualizarFuncionario.setSenha(passwordEncoder.encode(dto.getSenha()));
-
-        funcionarioRepository.save(atualizarFuncionario);
-        return atualizarFuncionario;
+        clienteRepository.save(atualizarCliente);
+        return atualizarCliente;
+        
     }
     
     //DELETAR UM FUNCIONARIO
-    public void deletarFuncionario(Long id){
-        if (!funcionarioRepository.existsById(id)) {
-            throw new RuntimeException("Funcionário não encontrado");
+    public void deletarCliente(Long id){
+        if (!clienteRepository.existsById(id)) {
+            throw new RuntimeException("Cliente não encontrado");
             
         }
-        funcionarioRepository.deleteById(id);
+        clienteRepository.deleteById(id);
     }
 }
