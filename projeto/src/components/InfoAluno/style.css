@@ -1,0 +1,11 @@
+/* projeto\src\components\InfoAluno\style.css */
+
+.info-aluno {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #141414;
+    color: #f0f0f0;
+}
