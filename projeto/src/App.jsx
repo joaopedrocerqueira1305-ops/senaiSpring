@@ -1,17 +1,16 @@
 import './App.css'
-import InfoAluno from './components/InfoAluno'
-import InfoCurso from './components/InfoCurso'
-import Mensagem from './components/Mensagem'
+import AdicionarUsuario from './components/AdicionarUsuario'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App() {
 
   return (
     <>
-      <h1>SENAI</h1>
-      <Mensagem />
-      <InfoAluno />
-      <hr />
-      <InfoCurso />
+      <Header />
+        <h1>Senai</h1>
+        <AdicionarUsuario />
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,11 @@
+/* src\components\Header\style.css */
+
+.header-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+    top: 0;
+}
