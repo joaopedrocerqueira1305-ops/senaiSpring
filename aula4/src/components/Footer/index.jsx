@@ -5,8 +5,8 @@ import './style.css';
 export default function Footer() {
   return (
     <footer className="footer">
-        <div>
-            <strong>Contabilidade Simples</strong>
+        <div className='footer__wrap'>
+            <strong>Farmacia saude</strong>
             <br />
             CNPH - 00.000.000/0000
         </div>

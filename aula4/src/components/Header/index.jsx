@@ -6,16 +6,25 @@ import './style.css';
 export default function Header() {
     return(
         <header className='header'>
-            <div className='header__'>
-                <Link to='/'>
-                    <img src={logo} alt="Logo da Comtabilidade" />
-                    <span>Contabilidade Dendezeiros</span>
+            <div className='header__wrap'>
+                <Link to='/' className='brand'>
+                    <img src={logo} alt="Logo da farmacia" />
+                    <span>Farmacia saude</span>
                 </Link>
+            
+
+                <nav className='nav'>
+                    <NavLink to="/produtos" className={({ isActive }) => isActive ? "link active" : "link"}>
+                        Produtos
+                    </NavLink>
+                    <NavLink to="/sobre-nos" className={({ isActive }) => isActive ? "link active" : "link"}>
+                        Sobre nós
+                    </NavLink>
+                    <NavLink to="/fale-conosco" className={({ isActive }) => isActive ? "link active" : "link"}>
+                        Fale conosco
+                    </NavLink>
+                </nav>
             </div>
-            <nav className='nav'>
-                <NavLink to= '/sobre-nos'>  Sobre nós </NavLink>
-                <NavLink to= '/fale-conosco'>  Contato </NavLink>
-            </nav>
         </header>
     )
 }
