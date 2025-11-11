@@ -1,0 +1,29 @@
+.contato {
+    display: grid;
+    gap: 14px;
+}
+
+.form {
+    display: grid;
+    gap: 12px;
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+}
+
+.field input:focus,
+.field textarea:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #93c5fd;
+}
