@@ -1,0 +1,69 @@
+/* ======================================
+    RESET BÁSICO E CONFIGURAÇÃO GLOBAL
+    ======================================
+*/
+
+/* Usa a fonte Inter (padrão de muitos sistemas modernos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    /* Define o modelo de caixa para incluir padding e border na largura/altura */
+    box-sizing: border-box;
+    /* Remove margens e paddings padrão de todos os elementos */
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {
+    /* Garante que a aplicação ocupe 100% da altura do viewport */
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f9; /* Fundo cinza claro para contraste */
+    color: #333;
+}
+
+
+/* ======================================
+    ESTRUTURA DE LAYOUT (STICKY FOOTER)
+    ======================================
+*/
+
+/* O elemento principal da aplicação (onde o <Router> está) */
+#root {
+    /* Habilita Flexbox para organizar Header, Main e Footer verticalmente */
+    display: flex;
+    flex-direction: column;
+}
+
+/* O conteúdo principal da página */
+main {
+    /* Permite que o MAIN cresça e ocupe todo o espaço disponível verticalmente */
+    flex-grow: 1; 
+    
+    /* Adiciona um padding geral ao conteúdo */
+    padding: 20px;
+    
+    /* Centraliza o conteúdo (pode ser ajustado) */
+    display: flex;
+    justify-content: center;
+}
+
+/* ======================================
+    ESTILOS GERAIS PARA LINKS E ELEMENTOS
+    ======================================
+*/
+
+/* Reset de links (já estilizados no Header, mas bom para o resto) */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Garante que o container do React Toastify não cause problemas de layout */
+.Toastify__toast-container {
+    z-index: 9999;
+}
