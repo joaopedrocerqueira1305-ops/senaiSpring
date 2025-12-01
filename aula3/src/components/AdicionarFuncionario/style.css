@@ -1,0 +1,19 @@
+/* src\components\AdicionarFuncionario\style.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container li{
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f4f4f4;
+    border: #ccc 1px solid;
+}
