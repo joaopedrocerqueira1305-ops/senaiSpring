@@ -1,0 +1,11 @@
+/* projeto\src\components\InfoCurso\style.css*/
+
+.info-curso {
+    border: 2px solid #000000;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #0e2138;
+    color: #f0f0f0;
+}

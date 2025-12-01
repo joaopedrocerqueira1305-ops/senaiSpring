@@ -1,0 +1,36 @@
+/* style.css */
+
+.home-container {
+    /* Habilita Flexbox para centralização */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    justify-content: center; /* Centraliza verticalmente (se necessário, dependendo do layout global) */
+    
+    /* Preenchimento para dar espaço ao redor do texto */
+    padding: 60px 20px;
+    
+    /* Garante que o container use a largura total da área disponível */
+    width: 100%;
+    
+    /* Garante que o conteúdo seja empurrado para o centro da tela se estiver no layout principal */
+    min-height: calc(100vh - 100px); /* Ajuste este valor dependendo da altura do seu Header e Footer */
+    text-align: center;
+}
+
+.home-container h1 {
+    /* Estilo para o título principal */
+    color: #34495e; /* Um cinza/azul escuro */
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.home-container p {
+    /* Estilo para o parágrafo de instrução */
+    color: #7f8c8d; /* Um cinza mais claro */
+    font-size: 1.2em;
+    margin-bottom: 0;
+    max-width: 600px;
+    line-height: 1.5;
+}
